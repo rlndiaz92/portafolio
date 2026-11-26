@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rolando Diaz · Desarrollador web</title>
+    <meta
+      name="description"
+      content="Portfolio de Rolando Diaz, desarrollador web junior: Node.js, Supabase, n8n y automatizaciones."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Aplica el tema guardado antes de pintar, para evitar parpadeo.
+      try {
+        const t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (_) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="#inicio">RD<span>.</span></a>
+        <nav class="nav" aria-label="Secciones">
+          <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
+          <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+          <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+          <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+        </nav>
+        <div class="tools">
+          <button class="tool" id="lang-btn" type="button" aria-label="Change language to English">EN</button>
+          <button class="tool" id="theme-btn" type="button" aria-label="Cambiar tema">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap" id="inicio">
+        <p class="eyebrow mono" data-i18n="hero.eyebrow">Hola, soy</p>
+        <h1 id="name"></h1>
+        <p class="role" id="role"></p>
+        <p class="lead" id="intro"></p>
+        <div class="cta">
+          <a class="btn primary" href="#proyectos" data-i18n="hero.projects">Ver proyectos</a>
+          <a class="btn" href="#contacto" data-i18n="hero.contact">Contactar</a>
+        </div>
+        <ul class="facts" id="facts"></ul>
+      </section>
+
+      <section class="section wrap" id="experiencia" aria-labelledby="exp-h">
+        <h2 id="exp-h" data-i18n="nav.experience">Experiencia</h2>
+        <div id="experience"></div>
+      </section>
+
+      <section class="section wrap" id="proyectos" aria-labelledby="proj-h">
+        <h2 id="proj-h" data-i18n="nav.projects">Proyectos</h2>
+        <div class="grid" id="projects"></div>
+      </section>
+
+      <section class="section wrap" id="habilidades" aria-labelledby="skills-h">
+        <h2 id="skills-h" data-i18n="nav.skills">Habilidades</h2>
+        <div class="skills" id="skills"></div>
+      </section>
+
+      <section class="section wrap" id="formacion" aria-labelledby="edu-h" hidden>
+        <h2 id="edu-h" data-i18n="nav.education">Formación</h2>
+        <ul class="list" id="education"></ul>
+      </section>
+
+      <section class="section wrap" id="contacto" aria-labelledby="contact-h">
+        <h2 id="contact-h" data-i18n="nav.contact">Contacto</h2>
+        <p class="lead" data-i18n="contact.text">¿Tienes una oferta o un proyecto? Escríbeme.</p>
+        <div class="contact" id="contact"></div>
+        <div class="reference" id="reference"></div>
+      </section>
+    </main>
+
+    <footer class="wrap footer">
+      <p><span id="year"></span> · Rolando Diaz · <span data-i18n="footer">Hecho con HTML, CSS y JavaScript, desplegado en Render.</span></p>
+    </footer>
+
+    <script src="content.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
